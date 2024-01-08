@@ -6,7 +6,6 @@ import androidx.databinding.BindingAdapter
 import coil.load
 
 object DataBindingImage {
-
     @JvmStatic
     @BindingAdapter("imageLoad")
     fun loadImage(image: ImageView, imagePath : String?){

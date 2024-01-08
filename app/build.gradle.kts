@@ -48,6 +48,7 @@ dependencies {
     val hiltVersion = "2.50"
     val lifecycleVersion ="2.6.2"
     val paging_version = "3.2.1"
+    val roomVersion = "2.6.1"
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -76,4 +77,10 @@ dependencies {
     implementation ("androidx.activity:activity-ktx:1.8.2")
     //paging
     implementation("androidx.paging:paging-runtime:$paging_version")
+    //Room
+    implementation("androidx.room:room-runtime:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
+    //  Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$roomVersion")
+    implementation("androidx.room:room-paging:$roomVersion")
 }
