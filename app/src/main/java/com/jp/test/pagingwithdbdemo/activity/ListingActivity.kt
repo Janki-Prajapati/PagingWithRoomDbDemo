@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.jp.test.pagingwithdbdemo.adapter.AdapterLoader
 import com.jp.test.pagingwithdbdemo.adapter.AdapterQuoteList
 import com.jp.test.pagingwithdbdemo.databinding.ActivityListingBinding
 import com.jp.test.pagingwithdbdemo.viewModel.ViewModelQuote
@@ -27,11 +28,17 @@ class ListingActivity : AppCompatActivity() {
 
     private fun initQuoteList() {
         adapterQuoteList = AdapterQuoteList()
-        binding.quoteList.adapter = adapterQuoteList
+        binding.quoteList.setHasFixedSize(true)
+        with(adapterQuoteList) {
+            binding.quoteList.adapter = withLoadStateHeaderAndFooter(
+                header = AdapterLoader(this),
+                footer = AdapterLoader(this)
+            )
 
-        lifecycleScope.launch {
-            viewModelQuote.list.collect {
-                adapterQuoteList.submitData(it)
+            lifecycleScope.launch {
+                viewModelQuote.list.collect {
+                    submitData(it)
+                }
             }
         }
     }

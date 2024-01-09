@@ -2,8 +2,8 @@ package com.jp.test.pagingwithdbdemo.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
-import com.cheezycode.quickpagingdemo.models.QuoteList
+import com.jp.test.pagingwithdbdemo.database.dao.QuoteDao
+import com.jp.test.pagingwithdbdemo.database.dao.RemoteKeysDao
 import com.jp.test.pagingwithdbdemo.models.QuoteRemoteKeys
 import com.jp.test.pagingwithdbdemo.models.Result
 

@@ -1,4 +1,4 @@
-package com.jp.test.pagingwithdbdemo.database
+package com.jp.test.pagingwithdbdemo.database.dao
 
 import androidx.paging.PagingSource
 import androidx.room.Dao
@@ -17,5 +17,5 @@ interface QuoteDao {
     fun getQuotes() : PagingSource<Int, Result>
 
     @Query("DELETE FROM quote")
-    suspend fun deleteQuotes()
+    fun deleteQuotes()
 }

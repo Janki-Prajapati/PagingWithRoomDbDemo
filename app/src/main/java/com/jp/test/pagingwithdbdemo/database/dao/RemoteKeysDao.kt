@@ -1,4 +1,4 @@
-package com.jp.test.pagingwithdbdemo.database
+package com.jp.test.pagingwithdbdemo.database.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
